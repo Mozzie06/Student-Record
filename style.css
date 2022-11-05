@@ -1,0 +1,313 @@
+body {
+
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  user-select: none;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: linear-gradient(red, transparent),
+
+    linear-gradient(to top left, lime, transparent),
+
+    linear-gradient(to top right, blue, transparent);
+
+  background-blend-mode: screen;
+
+}
+
+.formm {
+
+  display: flex;
+
+  padding: 20px;
+
+  width: 78%;
+
+  min-width: 75%;
+
+  align-items: center;
+
+  border-radius: 5px;
+
+  user-select: none;
+
+  margin-top: 20px;
+
+  background-color: white;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+.btn-group {
+
+  justify-content: flex-start;
+
+  flex-direction: row;
+
+  margin-top: 10px;
+
+}
+
+.inputgroup {
+
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+}
+
+.inputgroup input {
+
+  margin-bottom: 15px;
+
+  outline: none;
+
+  margin-top: 3px;
+
+  border: 1.2px solid #626262;
+
+  border-radius: 3px;
+
+  padding: 5px 10px 5px;
+
+}
+
+input:focus {
+
+  border: 1.2px solid #161616;
+
+}
+
+button {
+
+  color: #fff;
+
+  border: none;
+
+  transition: 0.2s;
+
+  border-radius: 2.5px;
+
+  outline: none;
+
+  padding: 5px 10px;
+
+  box-shadow: 0px 1px 2px rgba(40, 40, 40, 0.4);
+
+  background: linear-gradient(red, transparent),
+
+    linear-gradient(to top left, lime, transparent),
+
+    linear-gradient(to top right, blue, transparent);
+
+  background-blend-mode: screen;
+
+}
+
+button:active {
+
+  transform: scale(1.1);
+
+}
+
+button:nth-child(2) {
+
+  margin: 0px 10px;
+
+}
+
+select {
+
+  background-color: #fff;
+
+  border: 1.2px solid #626262;
+
+  padding: 2px 4px;
+
+  margin: 0px 10px;
+
+  font-weight: 500;
+
+  border-radius: 3px;
+
+  outline: none;
+
+}
+
+select:hover {
+
+  border: 1.2px solid black;
+
+}
+
+h4 {
+
+  font-weight: 500;
+
+  margin-top: 0px;
+
+  text-transform: uppercase;
+
+}
+
+table,
+
+th,
+
+td {
+
+  border-collapse: collapse;
+
+  border: 2px solid white;
+
+  font-weight: 500;
+
+  padding: 7px;
+
+  font-size: 13px;
+
+}
+
+table {
+
+  margin: 10px auto 0px auto;
+
+  width: 100%;
+
+  background-color: white;
+
+}
+
+th {
+
+  text-align: center;
+
+  background: linear-gradient(red, transparent),
+
+    linear-gradient(to top left, lime, transparent),
+
+    linear-gradient(to top right, blue, transparent);
+
+  background-blend-mode: screen;
+
+  color: #fff;
+
+  border: 2px solid;
+
+}
+
+td {
+
+  color: black;
+
+}
+
+tr:nth-of-type(odd) {
+
+  background-color: rgba(0, 153, 255, 0.05);
+
+  border-top: black;
+
+}
+
+tr:hover {
+
+  background-color: rgba(0, 153, 255, 0.2);
+
+}
+
+tr {
+
+  transition: 0.3s;
+
+}
+
+tr td:nth-child(3) {
+
+  text-align: center;
+
+}
+
+tr td:nth-child(2) {
+
+  text-align: center;
+
+}
+
+tr td:nth-child(4) {
+
+  text-align: center;
+
+}
+
+tr td:nth-child(5) {
+
+  text-align: center;
+
+}
+
+#myInput {
+
+  width: 96%;
+
+  outline: none;
+
+  margin-top: 20px;
+
+  border: 1.2px solid white;
+
+  border-radius: 3px;
+
+  padding: 10px 0px 10px 10px;
+
+}
+
+.main {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  margin-bottom: 20px;
+
+}
+
+ul {
+
+  display: none;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 0px 25px;
+
+  background: rgba(255, 255, 255, 0.3);
+
+}
+
+li {
+
+  margin: 5px 0px;
+
+  font-size: 14px;
+
+}
