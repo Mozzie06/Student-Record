@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Student Record</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+
+  
+
+    <script>
+
+      $(document).ready(function() {
+
+        $("#myInput").on("keyup", function() {
+
+          var value = $(this).val().toLowerCase();
+
+          $("#myTable tr").filter(function() {
+
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+
+          });
+
+        });
+
+      });
+
+    </script>
+
+    
+
+    <form class="formm">
+
+      <h4>Student Record</h4>
+
+      <div class="selectgroup">
+
+        <select id="class" onchange="ChangeClassList()">
+
+          <option value="select class" selected disabled>Select Class</option>
+
+          <option value="12th">12th</option>
+
+          <option value="11th">11th</option>
+
+          <option value="10th">10th</option>
+
+          <option value="9th">9th</option>
+
+        </select>
+
+        <select id="classSection">
+
+          <option value="0" selected>Section</option>
+
+        </select>
+
+      </div>
+
+      <div class="inputgroup"> Student Name <input type="text" placeholder="Enter Student Name" id="sName" autofocus> Subject Name <input type="text" placeholder="Enter Subject" id="subName" oninput="this.value = this.value.toUpperCase()" autofocus> ID Number <input type="number" placeholder="Enter ID Number" id="rName" autofocus>
+
+      </div>
+
+      <div class="btn-group">
+
+        <button type="button" onclick="insertData()">Insert</button>
+
+        <button type="button" onclick="updateData()">Update</button>
+
+        <button type="button" onclick="deleteData()">Delete</button>
+
+      </div>
+
+    </form>
+
+    
+
+    <div class="main">
+
+      <input type="text" id="myInput" placeholder="Search Students ...">
+
+      <table id="table">
+
+        <thead>
+
+          <tr>
+
+            <th>Student Name</th>
+
+            <th>ID No.</th>
+
+            <th>Subject</th>
+
+            <th>Class</th>
+
+            <th>Section</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="myTable">
+
+          <tr>
+
+            <td>Aegi</td>
+
+            <td>0618</td>
+
+            <td>SCIENCE</td>
+
+            <td>12th</td>
+
+            <td>C</td>
+
+          </tr>
+
+          <tr>
+
+            <td>Emma</td>
+
+            <td>1212</td>
+
+            <td>SCIENCE</td>
+
+            <td>11th</td>
+
+            <td>A</td>
+
+          </tr>
+
+          <tr>
+
+            <td>Kimroppi</td>
+
+            <td>6969</td>
+
+            <td>SCIENCE</td>
+
+            <td>12th</td>
+
+            <td>A</td>
+
+          </tr>
+
+          <tr>
+
+            <td>Mozzie</td>
+
+            <td>0914</td>
+
+            <td>COMMERCE</td>
+
+            <td>11th</td>
+
+            <td>B</td>
+
+          </tr>
+
+          <tr>
+
+            <td>Kaizt</td>
+
+            <td>2021</td>
+
+            <td>ARTS</td>
+
+            <td>12th</td>
+
+            <td>A</td>
+
+          </tr>
+
+          <tr>
+
+            <td>Twisted</td>
+
+            <td>2019</td>
+
+            <td>SCIENCE</td>
+
+            <td>11th</td>
+
+            <td>A</td>
+
+          </tr>
+
+          <tr>
+
+            <td>Wijuewon</td>
+
+            <td>2018</td>
+
+            <td>ARTS</td>
+
+            <td>12th</td>
+
+            <td>A</td>
+
+          </tr>
+
+          <tr>
+
+            <td>Passerby</td>
+
+            <td>0001</td>
+
+            <td>ARTS</td>
+
+            <td>11th</td>
+
+            <td>B</td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    
+
+    <script>
+
+      var table = document.getElementById("table"),
+
+        rIndex;
+
+      var inp = document.querySelector("input").value;
+
+      
+
+      //Show existing data in Input and Select Box
+
+      function showData() {
+
+        var classSection = document.getElementById("classSection");
+
+        var y = classSection.selectedIndex;
+
+        for (var i = 0; i < table.rows.length; i++) {
+
+          table.rows[i].onclick = function() {
+
+            rIndex = this.rowIndex;
+
+            document.getElementById("sName").value = this.cells[0].innerHTML;
+
+            document.getElementById("subName").value = this.cells[2].innerHTML;
+
+            document.getElementById("rName").value = this.cells[1].innerHTML;
+
+            document.getElementById("classSection").options[y].text = this.cells[4].innerHTML;
+
+            document.getElementById("class").value = this.cells[3].innerHTML;
+
+          };
+
+        }
+
+      }
+
+      showData();
+
+      
+
+      //Update Existing Data
+
+      function updateData() {
+
+        var classu = document.getElementById("class");
+
+        var x = classu.selectedIndex;
+
+        var classSection = document.getElementById("classSection");
+
+        var y = classSection.selectedIndex;
+
+        table.rows[rIndex].cells[0].innerHTML = document.getElementById("sName").value;
+
+        table.rows[rIndex].cells[1].innerHTML = document.getElementById("rName").value;
+
+        table.rows[rIndex].cells[2].innerHTML = document.getElementById("subName").value;
+
+        table.rows[rIndex].cells[3].innerHTML = document.getElementById("class").options[x].text;
+
+        table.rows[rIndex].cells[4].innerHTML = document.getElementById("classSection").options[y].text;
+
+      }
+
+      
+
+      //Insert or add data in data table
+
+      function insertData() {
+
+        var sName = document.getElementById("sName").value;
+
+        var subName = document.getElementById("subName").value;
+
+        var rName = document.getElementById("rName").value;
+
+        var classu = document.getElementById("class");
+
+        var x = classu.selectedIndex;
+
+        var classSection = document.getElementById("classSection");
+
+        var y = classSection.selectedIndex;
+
+        var table = document.getElementsByTagName('table')[0];
+
+        var newRow = table.insertRow(table.length);
+
+        var cell1 = newRow.insertCell(0);
+
+        var cell2 = newRow.insertCell(1);
+
+        var cell3 = newRow.insertCell(2);
+
+        var cell4 = newRow.insertCell(3);
+
+        var cell5 = newRow.insertCell(4);
+
+        cell1.innerHTML = sName;
+
+        cell2.innerHTML = rName;
+
+        cell3.innerHTML = subName;
+
+        cell4.innerHTML = classu.options[x].text;
+
+        cell5.innerHTML = classSection.options[y].text;
+
+        //this is for showing newly added data
+
+        showData();
+
+      }
+
+      //Delete Data from data table
+
+      function deleteData() {
+
+        table.deleteRow(rIndex);
+
+        var sName = document.getElementById("sName").value = "";
+
+        var subName = document.getElementById("subName").value = "";
+
+        var rName = document.getElementById("rName").value = "";
+
+        document.getElementById("classSection").selectedIndex = "0";
+
+        document.getElementById("class").selectedIndex = "0";
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
